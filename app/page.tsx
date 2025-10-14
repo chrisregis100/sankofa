@@ -95,7 +95,7 @@ export default function LandingPage() {
             </Link>
             <Link href="/register">
               <button className="px-5 py-2 bg-gradient-to-r from-[#ff9900] to-[#ff7700] rounded-full font-semibold hover:shadow-lg hover:shadow-[#ff9900]/50 transition-all">
-                S'inscrire
+                S&apos;inscrire
               </button>
             </Link>
           </div>
@@ -242,7 +242,7 @@ export default function LandingPage() {
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               La première plateforme de prêt P2P sur Lightning Network conçue
-              pour l'Afrique
+              pour l&apos;Afrique
             </p>
           </motion.div>
 
@@ -432,8 +432,8 @@ export default function LandingPage() {
               Prêt à rejoindre la révolution ?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Rejoignez des milliers d'utilisateurs qui font déjà confiance à
-              Sankofa Sats
+              Rejoignez des milliers d&apos;utilisateurs qui font déjà confiance
+              à Sankofa Sats
             </p>
             <Link href="/auth/register">
               <motion.button
