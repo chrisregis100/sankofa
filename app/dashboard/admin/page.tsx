@@ -633,10 +633,10 @@ export default function SuperAdminDashboard() {
                   </div>
                   <div className="text-xs text-gray-400">
                     {user.type === "lender"
-                      ? `${(user.volume / 1000000).toFixed(1)}M sats • ${
+                      ? `${((user.volume ?? 0) / 1000000).toFixed(1)}M sats • ${
                           user.loans
                         } prêts • ${user.rate}% taux`
-                      : `${(user.borrowed / 1000000).toFixed(
+                      : `${((user.borrowed ?? 0) / 1000000).toFixed(
                           1
                         )}M emprunté • Score ${user.score}/100`}
                   </div>
