@@ -95,43 +95,44 @@ export default function Sidebar() {
           </div>
         </div>
       )}
+      <div className="flex flex-col  justify-between">
+        <nav className="space-y-2">
+          {items.map((it) => {
+            const isActive = pathname === it.href;
+            return (
+              <Link
+                key={it.href}
+                href={it.href}
+                className={`flex items-center gap-3 p-3 rounded-lg transition-all ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#ff9900]/20 to-[#ff7700]/20 border border-[#ff9900]/50 text-[#ff9900]"
+                    : "hover:bg-[#1e1e1e] hover:border hover:border-white/10"
+                }`}
+              >
+                <it.icon
+                  className={isActive ? "text-[#ff9900]" : "text-gray-400"}
+                />
+                <span className={isActive ? "font-semibold" : ""}>
+                  {it.label}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
 
-      <nav className="space-y-2">
-        {items.map((it) => {
-          const isActive = pathname === it.href;
-          return (
-            <Link
-              key={it.href}
-              href={it.href}
-              className={`flex items-center gap-3 p-3 rounded-lg transition-all ${
-                isActive
-                  ? "bg-gradient-to-r from-[#ff9900]/20 to-[#ff7700]/20 border border-[#ff9900]/50 text-[#ff9900]"
-                  : "hover:bg-[#1e1e1e] hover:border hover:border-white/10"
-              }`}
-            >
-              <it.icon
-                className={isActive ? "text-[#ff9900]" : "text-gray-400"}
-              />
-              <span className={isActive ? "font-semibold" : ""}>
-                {it.label}
-              </span>
-            </Link>
-          );
-        })}
-      </nav>
-
-      {/* Logout Button */}
-      <div className="absolute bottom-6 left-4 right-4">
-        <Link
-          href="/"
-          onClick={() => {
-            localStorage.clear();
-          }}
-          className="flex items-center gap-3 p-3 rounded-lg bg-red-600/10 hover:bg-red-600/20 border border-red-600/30 transition-colors"
-        >
-          <LogOut className="text-red-400" />
-          <span className="text-red-400 font-medium">Déconnexion</span>
-        </Link>
+        {/* Logout Button */}
+        <div className=" bottom-6 left-4 right-4">
+          <Link
+            href="/"
+            onClick={() => {
+              localStorage.clear();
+            }}
+            className="flex items-center gap-3 p-3 rounded-lg bg-red-600/10 hover:bg-red-600/20 border border-red-600/30 transition-colors"
+          >
+            <LogOut className="text-red-400" />
+            <span className="text-red-400 font-medium">Déconnexion</span>
+          </Link>
+        </div>
       </div>
     </aside>
   );
